@@ -1,0 +1,13 @@
+server:
+  port: 2121
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:2222/postgres
+    username: postgres
+    password: ingress
+
+  jpa:
+    hibernate:
+      ddl-auto: update
