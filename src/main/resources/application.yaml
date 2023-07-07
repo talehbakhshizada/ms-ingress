@@ -7,7 +7,12 @@ spring:
     url: jdbc:postgresql://localhost:2222/postgres
     username: postgres
     password: ingress
-
   jpa:
-    hibernate:
-      ddl-auto: update
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yaml
