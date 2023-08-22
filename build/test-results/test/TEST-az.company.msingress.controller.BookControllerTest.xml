@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="az.company.msingress.controller.BookControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-11T21:53:10" hostname="DESKTOP-B1MRP4C" time="2.003">
+  <properties/>
+  <testcase name="TestCreateBook" classname="az.company.msingress.controller.BookControllerTest" time="2.003"/>
+  <system-out><![CDATA[01:53:11.808 [Test worker] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+01:53:11.812 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+01:53:11.820 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 5 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

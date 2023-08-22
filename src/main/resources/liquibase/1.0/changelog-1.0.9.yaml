@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create articles table
+      author: Taleh Bakhshizada
+      changes:
+        - createTable:
+            tableName: articles
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: content
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_articles_to_users
+                    references: users(id)
+                    nullable: true
+
+            remarks: Table to store information about user articles

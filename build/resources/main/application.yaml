@@ -1,0 +1,45 @@
+server:
+  port: 2121
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ingress_db
+    username: postgres
+    password: ingress
+
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto:
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yaml
+
+  rabbitmq:
+    host: localhost
+    username: ingress
+    password: ingress
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 3s
+          max-attempts: 5
+          max-interval: 5s
+          multiplier: 1
+        missing-queues-fatal: false
+
+rabbitmq:
+  queue:
+    card: CARD_Q
+    card-dlq: CARD_DLQ
+
+redis:
+  server:
+    url: redis://localhost:6379
